@@ -1,18 +1,18 @@
 [user]
-        email = borje.granberg@gmail.com
-	name = Borje Granberg
+  email = borje.granberg@gmail.com
+  name = Borje Granberg
 [core]
-        editor = emacs
+  editor = emacs
 [alias]
-        co = checkout
-        br = branch
-        ci = commit
-	st = status
-        unstage = reset HEAD --
-        last = log -1 HEAD
-        visual = !gitk
-	lg = log --pretty=\"%ai %h %an - %s\"
-	rev = "!git log | awk '/commit/ {commit = $2} /git-svn-id/ {split($2, tmp, \"@\");print tmp[2] \" \" commit}'"
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  visual = !gitk
+  lg = log --pretty=\"%ai %h %an - %s\"
+  rev = "!git log | awk '/commit/ {commit = $2} /git-svn-id/ {split($2, tmp, \"@\");print tmp[2] \" \" commit}'"
 [color]
   branch = auto
   diff = auto
@@ -30,3 +30,10 @@
   added = yellow
   changed = green
   untracked = cyan
+[merge]
+  tool = diffmerge
+[mergetool "diffmerge"]
+  cmd = ~/diffmerge-merge.sh \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+  trustExitCode = false
+[diff]
+  external = ~/diffmerge-diff.sh

@@ -1,0 +1,2 @@
+cp dot.gitconfig ~
+cp diffmerge-{diff,merge} ~
