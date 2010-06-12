@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-cp dot.gitconfig ~
-cp diffmerge-{diff,merge} ~
+cp -v dot.gitconfig ~
+cp -v diffmerge-{diff,merge}.sh ~
