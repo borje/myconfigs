@@ -1,8 +1,20 @@
 #!/bin/sh
 
 path="$(cygpath $2)"
-old="$(cygpath --mixed --absolute "$1")"
-new="$(cygpath --mixed --absolute "$2")"
+
+if [ "/dev/null" == $1 ]
+then
+    old="$(cygpath --mixed --absolute ~/diffmerge-empty)"
+else
+    old="$(cygpath --mixed --absolute "$1")"
+fi
+
+if [ "/dev/null" == $2 ]
+then
+    new="$(cygpath --mixed --absolute ~/diffmerge-empty)"
+else
+    new="$(cygpath --mixed --absolute "$2")"
+fi
 
 #echo -e "path\n$path"
 #echo -e "old\n$old"
