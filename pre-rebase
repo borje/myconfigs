@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+echo $1
+echo $2
+if [ $# -ne 2 ] 
+then
+    exit 0 #Only received one parameter
+fi
 head=`git rev-parse --verify HEAD`
 git checkout $1 2>>/dev/null
 files=`git diff --name-only $2`
@@ -10,7 +16,8 @@ git checkout $head 2>/dev/null
 cd - 
 if [ $after -gt $before ] 
 then
-   echo You have introduced $(( $after - $before )) checkstyle errors.
+echo You have introduced checkstyle errors.
+#$(( $after - $before )) checkstyle errors.
    exit 1
 else
    exit 0
