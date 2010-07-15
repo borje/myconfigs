@@ -2,7 +2,7 @@
         email = borje.granberg@cybercomgroup.com
 	name = Borje Granberg
 [core]
-        editor = emacs
+	editor = emacs -nw
 [alias]
         co = checkout
         br = branch
@@ -13,6 +13,12 @@
         visual = !gitk
 	lg = log --pretty=\"%ai %h %an - %s\"
 	rev = "!git log | awk '/commit/ {commit = $2} /git-svn-id/ {split($2, tmp, \"@\");print tmp[2] \" \" commit}'"
+	l = log --date=local
+	rlog = log --date=relative
+	branchpoint = "!git rev-list --boundary HEAD...origin/trunk | grep ^- | cut -c2-"
+	cs = "!git diff `git branchpoint` --name-only| egrep '.cc|.hh' |xargs ./cpplint.py"
+	in = "!git log `git branchpoint`..origin/trunk --stat"
+	out = "!git log `git branchpoint` --stat"
 [color]
   branch = auto
   diff = auto
@@ -27,6 +33,10 @@
   old = red bold
   new = green bold
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
+[merge]
+	tool = emerge
+[diff]
+	tool = kompare
