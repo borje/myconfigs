@@ -11,14 +11,15 @@
         unstage = reset HEAD --
         last = log -1 HEAD
         visual = !gitk
-	lg = log --pretty=\"%ai %h %an - %s\"
+	lg = log --date=local --pretty=\"%ai %h %an - %s\"
 	rev = "!git log | awk '/commit/ {commit = $2} /git-svn-id/ {split($2, tmp, \"@\");print tmp[2] \" \" commit}'"
 	l = log --date=local
 	rlog = log --date=relative
+	cherrypickrange = !sh -c 'git rev-list --reverse $1 | xargs -n 1 git cherry-pick' -
 	branchpoint = "!git rev-list --boundary HEAD...origin/trunk | grep ^- | cut -c2-"
 	cs = "!git diff `git branchpoint` --name-only| egrep '.cc|.hh' |xargs ./cpplint.py"
 	in = "!git log `git branchpoint`..origin/trunk --stat"
-	out = "!git log `git branchpoint` --stat"
+	out = "!git log `git branchpoint`..HEAD --stat"
 [color]
   branch = auto
   diff = auto
