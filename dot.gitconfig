@@ -21,18 +21,18 @@
 	in = "!git log `git branchpoint`..origin/trunk --stat"
 	out = "!git log `git branchpoint`..HEAD --stat"
 [color]
-  branch = auto
-  diff = auto
-  status = auto
+	branch = auto
+	diff = auto
+	status = auto
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [color "status"]
 	added = yellow
 	changed = green
