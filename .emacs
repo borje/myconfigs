@@ -13,7 +13,7 @@
 ;; 'Edit' välja 'Text properties' och sedan 'Display Colors'.
 ;; ----------------------------------------------------------------------------
 
-(set-default-font "9x15")
+;(set-default-font "9x15")
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (global-font-lock-mode t)                      ; Highlighting...
@@ -125,6 +125,7 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (require 'go-mode-load)
+(require 'php-mode)
 (global-auto-complete-mode t)
 ;; Auto-complete configuration
 (setq-default ac-sources '(ac-source-words-in-same-mode-buffers))
