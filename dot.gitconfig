@@ -1,6 +1,6 @@
 [user]
-        email = borje.granberg@cybercomgroup.com
-	name = Borje Granberg
+  email = borje.granberg@gmail.com
+  name = Borje Granberg
 [core]
 	editor = emacs -nw
 [alias]
