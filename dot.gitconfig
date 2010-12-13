@@ -41,3 +41,5 @@
 	tool = emerge
 [diff]
 	tool = kompare
+[push]
+	default = tracking
