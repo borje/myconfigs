@@ -124,7 +124,7 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (require 'go-mode-load)
-(require 'php-mode)
+;; (require 'php-mode)
 (global-auto-complete-mode t)
 ;; Auto-complete configuration
 (setq-default ac-sources '(ac-source-words-in-same-mode-buffers))
