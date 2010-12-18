@@ -39,6 +39,7 @@
 	untracked = cyan
 [merge]
 	tool = emerge
+	conflictstyle = diff3
 [diff]
 	tool = kompare
 [push]
