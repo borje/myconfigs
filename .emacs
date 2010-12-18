@@ -5,15 +5,14 @@
 (display-time)
 
 ;; ----------------------------------------------------------------------------
-;; Här kan du ställa in färgerna i Emacs. Det finns grundfärger såsom
-;; bakgrund och markör. Utöver dessa finns det även specifika färger
-;; för programkod som man kan ställa in för att underlätta läsningen.
+;; HÃ¤r kan du stÃ¤lla in fÃ¤rgerna i Emacs. Det finns grundfÃ¤rger sÃ¥som
+;; bakgrund och markÃ¶r. UtÃ¶ver dessa finns det Ã¤ven specifika fÃ¤rger
+;; fÃ¶r programkod som man kan stÃ¤lla in fÃ¶r att underlÃ¤tta lÃ¤sningen.
 ;;
-;; För att få reda på vilka färger som finns i Emacs kan man via menyn
-;; 'Edit' välja 'Text properties' och sedan 'Display Colors'.
+;; FÃ¶r att fÃ¥ reda pÃ¥ vilka fÃ¤rger som finns i Emacs kan man via menyn
+;; 'Edit' vÃ¤lja 'Text properties' och sedan 'Display Colors'.
 ;; ----------------------------------------------------------------------------
 
-;(set-default-font "9x15")
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (global-font-lock-mode t)                      ; Highlighting...
@@ -23,7 +22,7 @@
 ;(setq lazy-lock-stealth-verbose t)             ; ...and report doing so...
 ;(setq lazy-lock-defer-driven 1)                ; ...defer-driven "eventually".
 
-;; Grundfärger.
+;; GrundfÃ¤rger.
 (set-background-color "Black")
 (set-foreground-color "CornFlowerBlue")
 (set-cursor-color     "White")
@@ -31,8 +30,8 @@
 (set-face-background 'modeline "CornFlowerBlue")
 (set-face-foreground 'modeline "White")
 
-;; Färger i Emacs 19.XX
-;; Kodspecifika färger. För varje kodtyp anges följande:
+;; FÃ¤rger i Emacs 19.XX
+;; Kodspecifika fÃ¤rger. FÃ¶r varje kodtyp anges fÃ¶ljande:
 ;;     (FACE FOREGROUND BACKGROUND BOLD-P ITALIC-P UNDERLINE-P)
 (if (string-match "^19" emacs-version)
     (setq font-lock-face-attributes
@@ -45,7 +44,7 @@
 	    (font-lock-reference-face     "ForestGreen" nil nil nil nil))))
 
 
-;; Färger i Emacs 20.XX
+;; FÃ¤rger i Emacs 20.XX
 (if (string-match "^20" emacs-version)
     (progn
       (custom-set-variables)
@@ -66,7 +65,7 @@
 				    (:foreground "ForestGreen")))))))
 
 ;; ----------------------------------------------------------------------------
-;; Några extra saker som kan vara trevliga att ha.
+;; NÃ¥gra extra saker som kan vara trevliga att ha.
 ;; ----------------------------------------------------------------------------
 
 ;; Ser till att det alltid finns ett "RETURN" i slutet av filen ...
@@ -77,7 +76,7 @@
                      (nth 1 (current-input-mode))
                      0)
 
-;; Delete-knapp raderar all text i ett markerat område
+;; Delete-knapp raderar all text i ett markerat omrÃ¥de
 (delete-selection-mode t)
 
 ;; Switch CR/LF. This will make <enter> indent program code automatically.
@@ -90,30 +89,30 @@
 ;; "Slipper" skriva "M-x goto-line".
 (define-key global-map "\C-x\C-g" 'goto-line)
 
-;; Mappar om "Delete" så den funkar som den "ska".
+;; Mappar om "Delete" sÃ¥ den funkar som den "ska".
 (define-key global-map '[delete] 'delete-char)
 
-;; "Ctrl-RET" för att fylla ut ett ord (ungefär som "TAB" i skalfönstret).
+;; "Ctrl-RET" fÃ¶r att fylla ut ett ord (ungefÃ¤r som "TAB" i skalfÃ¶nstret).
 (global-set-key '[(control return)] 'dabbrev-expand)
 
 (global-set-key '[f7] 'recompile)
-;; Invertera markerat område
+;; Invertera markerat omrÃ¥de
 (transient-mark-mode t)
 
 ;; Markera matchande parenteser
 (show-paren-mode 1)
 
-;; Se till att man inte kan gå längre ner i filen än till sista raden
-;; Gör att man inte får en massa tomma rader i slutet av filen
+;; Se till att man inte kan gÃ¥ lÃ¤ngre ner i filen Ã¤n till sista raden
+;; GÃ¶r att man inte fÃ¥r en massa tomma rader i slutet av filen
 (setq next-line-add-newlines nil)
 
-;; Gör så att man endast "scrollar" en rad i taget när man går uppåt
-;; och neråt
+;; GÃ¶r sÃ¥ att man endast "scrollar" en rad i taget nÃ¤r man gÃ¥r uppÃ¥t
+;; och nerÃ¥t
 (setq scroll-step 1)
 (setq scroll-conservatively 1)
 
-;; Se till att vi håller reda på vilken rad och position på rad vi
-;; befinner oss på.
+;; Se till att vi hÃ¥ller reda pÃ¥ vilken rad och position pÃ¥ rad vi
+;; befinner oss pÃ¥.
 (setq line-number-mode t)
 (setq column-number-mode t)
 
@@ -144,7 +143,7 @@
 (require 'yasnippet-bundle)
 (yas/initialize)
 
-;; Bredden på tabbar
+;; Bredden pÃ¥ tabbar
 (setq default-tab-width 2)
 
 
