@@ -1,0 +1,1 @@
+/opt/gocode/vim/autoload/gocomplete.vim
