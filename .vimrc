@@ -7,6 +7,7 @@ colorscheme ir_black
 " tab complete like in bash
 set wildmenu
 set wildmode=longest,list,full
+set incsearch
 
 syntax on
 filetype plugin on
