@@ -8,9 +8,6 @@ colorscheme ir_black
 set wildmenu
 set wildmode=longest,list,full
 
-" Remove toolbar
-set guioptions-=T
-
 syntax on
 filetype plugin on
 
