@@ -11,6 +11,7 @@ set incsearch
 
 syntax on
 filetype plugin on
+filetype indent on
 
 " Map <C-Space> to omnicompletion
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
