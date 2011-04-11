@@ -3,7 +3,7 @@ set foldmethod=indent
 set hlsearch " highlight search
 set number " show linenumbers
 set autoindent " automatic indentation
-colorscheme ir_black
+colorscheme ron
 " tab complete like in bash
 set wildmenu
 set wildmode=longest,list,full

@@ -1,4 +1,4 @@
-colorscheme blue
+colorscheme xoria256
 
 " Remove toolbar and menu
 set guioptions-=T
