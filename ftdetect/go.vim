@@ -1,2 +1,2 @@
-au BufRead,BufNewFile *.go set filetype=go:w
+au BufRead,BufNewFile *.go set filetype=go
 
