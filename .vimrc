@@ -2,7 +2,14 @@ set tabpagemax=15
 set foldmethod=indent
 set hlsearch " highlight search
 set number " show linenumbers
-set autoindent " automatic indentation
+set ruler
+" Indentation 
+set expandtab
+set autoindent
+set shiftwidth=4
+set softtabstop=4
+set tabstop=8
+
 colorscheme ron
 " tab complete like in bash
 set wildmenu
