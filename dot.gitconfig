@@ -20,6 +20,7 @@
 	cs = "!git diff `git branchpoint` --name-only| egrep '.cc|.hh' |xargs ./cpplint.py"
 	in = "!git log `git branchpoint`..origin/trunk --stat"
 	out = "!git log `git branchpoint`..HEAD --stat"
+	wdiff = diff --word-diff
 [color]
 	branch = auto
 	diff = auto
