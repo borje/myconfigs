@@ -2,7 +2,7 @@
   email = borje.granberg@gmail.com
   name = Borje Granberg
 [core]
-	editor = emacs -nw
+	editor = vim
 [alias]
         co = checkout
         br = branch
