@@ -96,6 +96,7 @@
 (global-set-key '[(control return)] 'dabbrev-expand)
 
 (global-set-key '[f7] 'recompile)
+(global-set-key '[f6] 'comment-or-uncomment-region)
 ;; Invertera markerat område
 (transient-mark-mode t)
 
