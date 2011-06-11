@@ -35,3 +35,5 @@ map ,c :w\|:bd<CR>
 set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
 :set laststatus=2
 
+" Show the current command in the lower right corner
+set showcmd
