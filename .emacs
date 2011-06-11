@@ -121,9 +121,10 @@
 
 ;; Auto-complete
 (add-to-list 'load-path "~/.emacs.d/")
-(require 'auto-complete)
-(require 'auto-complete-config)
 (require 'go-mode-load)
+(require 'auto-complete)
+(require 'go-autocomplete)
+(require 'auto-complete-config)
 ;; (require 'php-mode)
 (global-auto-complete-mode t)
 ;; Auto-complete configuration
