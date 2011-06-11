@@ -10,7 +10,7 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=8
 
-colorscheme ron
+colorscheme peachpuff
 " tab complete like in bash
 set wildmenu
 set wildmode=longest,list,full
