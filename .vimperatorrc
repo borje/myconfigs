@@ -8,7 +8,7 @@
 :autocmd LocationChange mail\.google\.com/(mail|a)/ :fmaps -d 9 c / h j k n p o u e x s r a # [ ] z ? gi gs gt gd ga gc
 
 "" "Google Reader
-:autocmd LocationChange www\.google\.(se|com)/reader :fmaps -events=vkeypress j k o J K O a v <CR> gh gs <Space>
+:autocmd LocationChange www\.google\.(se|com)/reader :fmaps -events=vkeypress j k o J K O a v <CR> gh gs <Space> 1 2
 
 "" "Google Search
 : autocmd LocationChange www\.google\.(se|com)/search :fmaps j k o /
