@@ -9,6 +9,8 @@ set autoindent
 set shiftwidth=4
 set softtabstop=4
 set tabstop=8
+set ignorecase
+set smartcase
 
 colorscheme peachpuff
 " tab complete like in bash
@@ -37,3 +39,6 @@ set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
 
 " Show the current command in the lower right corner
 set showcmd
+
+" cd to the directory containing the file in the buffer
+nmap <silent> ,cd :lcd %:h<CR>
