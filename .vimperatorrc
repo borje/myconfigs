@@ -1,18 +1,19 @@
 :set verbose=9
+:au!
 "" :autocmd LocationChange .* js modes.passAllKeys = /((www)\.google\.com)/.test(buffer.URL)
 
 "" " feedSomeKeys_2.js
-:autocmd LocationChange .* :fmapc!
+:autocmd LocationChange .* :fmapc
 
 "" " Gmail
-:autocmd LocationChange mail\.google\.com/(mail|a)/ :fmaps -d 9 c / h j k n p o u e x s r a # [ ] z ? gi gs gt gd ga gc
+:autocmd LocationChange mail\.google\.com/(mail|a)/ :fmap c / h J,j K,k n p o u e x s r a # [ ] z ? gi gs gt gd ga gc 
 
 "" "Google Reader
-:autocmd LocationChange www\.google\.(se|com)/reader :fmaps -events=vkeypress j k o J K O a v <CR> gh gs <Space> 1 2
+:autocmd LocationChange www\.google\.(se|com)/reader :fmap -vkey -event keypress j k o J K O a v <CR> gh gs <Space> 1 2
 
 "" "Google Search
-: autocmd LocationChange www\.google\.(se|com)/search :fmaps j k o /
+: autocmd LocationChange www\.google\.(se|com)/search :fmap j k o /
 
 "" "Google Calendar
-:autocmd LocationChange www\.google\.com/calendar fmaps -events vkeydown j k T,t a D,d d w m x c e z / + q s ?
+:autocmd LocationChange www\.google\.com/calendar fmap! -vkey -event keydown j k T,t a D,d d w m x c e z / + q s ?
 
