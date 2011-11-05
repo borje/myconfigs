@@ -42,3 +42,6 @@ set showcmd
 
 " cd to the directory containing the file in the buffer
 nmap <silent> ,cd :lcd %:h<CR>
+
+" set default SuperTab completion mode
+let g:SuperTabDefaultCompletionType = "context"
