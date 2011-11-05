@@ -1,3 +1,6 @@
+" Initialize Pathogen
+call pathogen#infect()
+
 set tabpagemax=15
 set foldmethod=indent
 set hlsearch " highlight search
