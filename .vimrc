@@ -1,5 +1,6 @@
 " Initialize Pathogen
 call pathogen#infect()
+call pathogen#helptags()
 
 set tabpagemax=15
 set foldmethod=indent
