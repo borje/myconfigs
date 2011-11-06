@@ -4,9 +4,12 @@ call pathogen#helptags()
 
 set tabpagemax=15
 set foldmethod=indent
+set foldlevelstart=1
 set hlsearch " highlight search
 set number " show linenumbers
 set ruler
+set scrolloff=8
+let mapleader = ","
 " Indentation 
 set expandtab
 set autoindent
