@@ -52,3 +52,6 @@ nmap <silent> ,cd :lcd %:h<CR>
 
 " set default SuperTab completion mode
 let g:SuperTabDefaultCompletionType = "context"
+
+" FSwitch mappings
+nmap <silent> ,fs :FSHere<CR>
