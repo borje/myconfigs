@@ -57,4 +57,4 @@ let g:SuperTabDefaultCompletionType = "context"
 nmap <silent> ,fs :FSHere<CR>
 
 " NerdTree mappings
-nmap <silent> <C-d> :NERDTreeToggle<CR>
+nmap <silent> <F7> :NERDTreeToggle<CR>
