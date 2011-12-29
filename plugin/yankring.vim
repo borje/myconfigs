@@ -163,7 +163,7 @@ if !exists('g:yankring_o_keys')
 endif
 
 if !exists('g:yankring_zap_keys')
-    let g:yankring_zap_keys = 'f F t T / ? @'
+    let g:yankring_zap_keys = 'f F t T / ?'
 endif
 
 " Allow the user to specify what operator pending motions to map
