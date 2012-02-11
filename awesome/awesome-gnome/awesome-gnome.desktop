@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Awesome Gnome
+Comment=This session logs you into Ubuntu
+Exec=gnome-session --session=awesome
+TryExec=gnome-session
+Icon=
+Type=XSession
+X-Ubuntu-Gettext-Domain=gnome-session-3.0

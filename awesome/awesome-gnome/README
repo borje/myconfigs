@@ -1,0 +1,5 @@
+To add awesome run as a gnome-session:
+
+sudo ln -s `pwd`/awesome-gnome.desktop /usr/share/xsessions/
+sudo ln -s `pwd`/awesome.session /usr/share/gnome-session/sessions/
+sudo ln -s `pwd`/awesome.desktop /usr/share/applications/
