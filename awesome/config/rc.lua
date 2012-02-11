@@ -80,6 +80,26 @@ mytextclock = awful.widget.textclock({ align = "right" })
 mybattery = widget({ type = "textbox" })
 vicious.register(mybattery, vicious.widgets.bat,"[$2% $1$3]", 21, "BAT0")
 
+-- {{{ Volume level
+volicon = widget({ type = "imagebox" })
+volicon.image = image(beautiful.widget_vol)
+-- Initialize widgets
+volbar    = awful.widget.progressbar()
+volwidget = widget({ type = "textbox" })
+-- Progressbar properties
+volbar:set_vertical(true):set_ticks(true)
+volbar:set_width(8):set_ticks_size(2)
+volbar:set_background_color(beautiful.fg_off_widget)
+volbar:set_gradient_colors({ "#FF5656", "#88A175", "#AECF96" })
+
+-- Enable caching
+vicious.cache(vicious.widgets.volume)
+-- Register widgets
+vicious.register(volbar,    vicious.widgets.volume,  "$1",  2, "Master")
+vicious.register(volwidget, vicious.widgets.volume, " $1%", 2, "Master")
+-- }}}
+
+--
 --CPU usage widget
 cpuwidget = awful.widget.graph()
 cpuwidget:set_width(50)
@@ -88,14 +108,21 @@ cpuwidget:set_color("#FF5656")
 cpuwidget:set_gradient_colors({ "#FF5656", "#88A175", "#AECF96" })
 vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 3)
 
--- Seprator
+-- Separator
 separator = widget({type = "textbox"})
 separator.text = " | "
 
 --Memory widget
 memwidget = widget({ type = "textbox" })
 vicious.cache(vicious.widgets.mem)
-vicious.register(memwidget, vicious.widgets.mem, "$2MB/$3MB", 13)
+membar = awful.widget.progressbar()
+membar:set_vertical(true):set_ticks(true)
+membar:set_width(8):set_ticks_size(2)
+membar:set_background_color(beautiful.fg_off_widget)
+membar:set_gradient_colors({ "#FF5656", "#88A175", "#AECF96" })
+vicious.register(memwidget, vicious.widgets.mem, "$2MB", 13)
+vicious.register(membar, vicious.widgets.mem, "$1", 13)
+
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
@@ -176,10 +203,11 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
-        cpuwidget.widget,
-        separator, memwidget,
+        separator, cpuwidget.widget,
+        separator, memwidget, membar.widget,
         separator, mybattery,
-        s == 1 and mysystray or nil,
+        separator, volwidget,  volbar.widget, volicon,
+        separator, s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
