@@ -1,0 +1,2 @@
+./config/ should be symlinked to ~/.config/awesome:
+ln -s `pwd`/config ~/.config/awesome
