@@ -1,25 +1,22 @@
 [user]
-  email = borje.granberg@gmail.com
-  name = Borje Granberg
+	email = borje.granberg@gmail.com
+	name = Borje Granberg
 [core]
 	editor = vim
 [alias]
-        co = checkout
-        br = branch
-        ci = commit
+	co = checkout
+	br = branch
+	ci = commit
 	st = status
-        unstage = reset HEAD --
-        last = log -1 HEAD
-        visual = !gitk
+	unstage = reset HEAD --
+	last = log -1 HEAD
 	lg = log --date=local --pretty=\"%ai %h %an - %s\"
-	rev = "!git log | awk '/commit/ {commit = $2} /git-svn-id/ {split($2, tmp, \"@\");print tmp[2] \" \" commit}'"
 	l = log --date=local
 	rlog = log --date=relative
-	cs = "!git diff `git branchpoint` --name-only| egrep '.cc|.hh' |xargs ./cpplint.py"
 	in = log --date=local HEAD..origin/master
 	out = log  --date=local origin/master..HEAD
-       wdiff = diff --word-diff
-       fp = format-patch -k --stdout
+	wdiff = diff --word-diff
+	fp = format-patch -k --stdout
 [color]
 	branch = auto
 	diff = auto
