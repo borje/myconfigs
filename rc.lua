@@ -1,3 +1,4 @@
+require("vicious")
 -- Standard awesome library
 require("awful")
 require("awful.autofocus")
@@ -75,6 +76,8 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
+mybattery = widget({ type = "textbox" })
+vicious.register(mybattery, vicious.widgets.bat,"[$2% $1$3]", 21, "BAT0")
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
@@ -155,6 +158,7 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
+        mybattery,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
