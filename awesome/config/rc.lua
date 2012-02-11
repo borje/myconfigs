@@ -102,10 +102,13 @@ vicious.register(volwidget, vicious.widgets.volume, " $1%", 2, "Master")
 --
 --CPU usage widget
 cpuwidget = awful.widget.graph()
+vicious.cache(vicious.widgets.cpu)
 cpuwidget:set_width(50)
 cpuwidget:set_background_color("#494B4F")
 cpuwidget:set_color("#FF5656")
 cpuwidget:set_gradient_colors({ "#FF5656", "#88A175", "#AECF96" })
+cpuperc = widget({ type = "textbox" })
+vicious.register(cpuperc, vicious.widgets.cpu, " $1%", 3)
 vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 3)
 
 -- Separator
@@ -120,7 +123,7 @@ membar:set_vertical(true):set_ticks(true)
 membar:set_width(8):set_ticks_size(2)
 membar:set_background_color(beautiful.fg_off_widget)
 membar:set_gradient_colors({ "#FF5656", "#88A175", "#AECF96" })
-vicious.register(memwidget, vicious.widgets.mem, "$2MB", 13)
+vicious.register(memwidget, vicious.widgets.mem, " $2MB", 13)
 vicious.register(membar, vicious.widgets.mem, "$1", 13)
 
 
@@ -203,7 +206,7 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
-        separator, cpuwidget.widget,
+        separator, cpuperc, cpuwidget.widget,
         separator, memwidget, membar.widget,
         separator, mybattery,
         separator, volwidget,  volbar.widget, volicon,
