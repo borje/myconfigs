@@ -89,20 +89,26 @@ vicious.register(volwidget, vicious.widgets.volume, " $1%", 2, "Master")
 -- }}}
 
 --
---CPU usage widget
+-- Separator
+separator = widget({type = "textbox"})
+separator.text = " | "
+
+-- {{{ CPU usage widget
 cpuwidget = awful.widget.graph()
 vicious.cache(vicious.widgets.cpu)
 cpuwidget:set_width(50)
 cpuwidget:set_background_color("#494B4F")
 cpuwidget:set_color("#FF5656")
 cpuwidget:set_gradient_colors({ "#FF5656", "#88A175", "#AECF96" })
-cpuperc = widget({ type = "textbox" })
-vicious.register(cpuperc, vicious.widgets.cpu, " $1%", 3)
 vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 3)
 
--- Separator
-separator = widget({type = "textbox"})
-separator.text = " | "
+cpuperc = widget({ type = "textbox" })
+vicious.register(cpuperc, vicious.widgets.cpu, " $1%", 3)
+
+cpufreqwidget = widget({ type = "textbox" })
+vicious.cache(vicious.widgets.cpufreq)
+vicious.register(cpufreqwidget, vicious.widgets.cpufreq, " @$2Ghz", 2, "cpu0")
+-- }}}
 
 --Memory widget
 memwidget = widget({ type = "textbox" })
@@ -195,7 +201,7 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
-        separator, cpuperc, cpuwidget.widget,
+        separator, cpufreqwidget, cpuperc, cpuwidget.widget,
         separator, memwidget, membar.widget,
         separator, mybattery,
         separator, volwidget,  volbar.widget, volicon,
