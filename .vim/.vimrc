@@ -39,6 +39,11 @@ imap <C-@> <C-Space>
 
 "" key bindings
 map ,c :w\|:bd<CR>
+map <M-Left> :bp<CR>
+map <M-Right> :bn<CR>
+map ,l :ls<CR>
+map ,, :b#<CR>
+
 
 " Statusline
 set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
