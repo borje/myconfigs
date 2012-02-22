@@ -4,7 +4,7 @@ call pathogen#helptags()
 
 set tabpagemax=15
 set foldmethod=indent
-set foldlevelstart=1
+set foldlevelstart=99
 set hlsearch " highlight search
 set number " show linenumbers
 set ruler
