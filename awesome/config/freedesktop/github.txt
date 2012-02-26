@@ -1,0 +1,2 @@
+https://github.com/terceiro/awesome-freedesktop.git
+09856a0a47617da603fbef1754578b5ab874ce03
