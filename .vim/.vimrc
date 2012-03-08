@@ -67,3 +67,6 @@ nmap <silent> ,fs :FSHere<CR>
 
 " NerdTree mappings
 nmap <silent> <F7> :NERDTreeToggle<CR>
+
+" buftab settings
+let g:buftabs_separator=":"
