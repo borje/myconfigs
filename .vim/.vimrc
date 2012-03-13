@@ -24,6 +24,7 @@ colorscheme peachpuff
 set wildmenu
 set wildmode=longest,list,full
 set incsearch
+set nowrap
 
 syntax on
 filetype plugin on
