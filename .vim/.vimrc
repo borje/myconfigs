@@ -19,6 +19,9 @@ set tabstop=8
 set ignorecase
 set smartcase
 
+" Remember undo history when switching buffers
+set hid
+
 colorscheme peachpuff
 " tab complete like in bash
 set wildmenu
