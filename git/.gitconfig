@@ -17,6 +17,7 @@
 	out = log  --stat --date=local origin/master..HEAD
 	wdiff = diff --word-diff
 	fp = format-patch -k --stdout
+	dc = diff --cached
 [color]
 	branch = auto
 	diff = auto
