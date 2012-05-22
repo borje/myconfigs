@@ -28,6 +28,7 @@ set wildmenu
 set wildmode=longest,list,full
 set incsearch
 set nowrap
+set showcmd
 
 syntax on
 filetype plugin on
