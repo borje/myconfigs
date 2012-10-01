@@ -20,6 +20,7 @@
 	fp = format-patch -k --stdout
 	dc = diff --cached
         caa = commit -a --amend
+    ff = merge --ff-only
 [color]
 	branch = auto
 	diff = auto
