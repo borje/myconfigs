@@ -43,11 +43,11 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 imap <C-@> <C-Space>
 
 "" key bindings
-map ,c :w\|:bd<CR>
+map <Leader>c :w\|:bd<CR>
 map <M-Left> :bp<CR>
 map <M-Right> :bn<CR>
-map ,l :ls<CR>
-map ,, :b#<CR>
+map <Leader>l :ls<CR>
+map <Leader><Leader> :b#<CR>
 
 
 " Statusline
@@ -58,16 +58,17 @@ set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
 set showcmd
 
 " cd to the directory containing the file in the buffer
-nmap <silent> ,cd :lcd %:h<CR>
+nmap <silent> <Leader>cd :lcd %:h<CR>
 
 " set default SuperTab completion mode
 let g:SuperTabDefaultCompletionType = "context"
 
 " FSwitch mappings
-nmap <silent> ,fs :FSHere<CR>
+nmap <silent> <Leader>fs :FSHere<CR>
+map <C-Tab> :FSHere<CR>
 
 " NerdTree mappings
-nmap <silent> <F7> :NERDTreeToggle<CR>
+nmap <silent> <Leader>t :NERDTreeToggle<CR>
 let NERDTreeDirArrows=1
 let NERDTreeQuitOnOpen=1
 
