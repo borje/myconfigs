@@ -268,6 +268,12 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
+
+    -- Spotify keys
+    awful.key({ "Mod1", "Ctrl" }, "Right", function () os.execute("/home/bo-gra/scripts/spotify.sh next") end),
+    awful.key({ "Mod1", "Ctrl" }, "Left", function () os.execute("/home/bo-gra/scripts/spotify.sh prev") end),
+    awful.key({ "Mod1", "Ctrl" }, "Up", function () os.execute("/home/bo-gra/scripts/spotify.sh playpause") end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
