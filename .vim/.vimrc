@@ -28,7 +28,6 @@ set wildmenu
 set wildmode=longest,list,full
 set incsearch
 set nowrap
-set showcmd
 
 syntax on
 filetype plugin on
@@ -43,11 +42,12 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 imap <C-@> <C-Space>
 
 "" key bindings
-map ,c :w\|:bd<CR>
+map <Leader>c :w\|:bd<CR>
 map <M-Left> :bp<CR>
 map <M-Right> :bn<CR>
-map ,l :ls<CR>
-map ,, :b#<CR>
+map <Leader>l :ls<CR>
+map <Leader><Leader> :b#<CR>
+map <Leader>fs :FSHere<CR>
 
 
 " Statusline
@@ -58,16 +58,22 @@ set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B]
 set showcmd
 
 " cd to the directory containing the file in the buffer
-nmap <silent> ,cd :lcd %:h<CR>
+nmap <silent> <Leader>cd :lcd %:h<CR>
 
 " set default SuperTab completion mode
 let g:SuperTabDefaultCompletionType = "context"
 
 " FSwitch mappings
-nmap <silent> ,fs :FSHere<CR>
+nmap <silent> <Leader>fs :FSHere<CR>
+map <C-Tab> :FSHere<CR>
+augroup fswithsettings
+    au!
+    au BufEnter *.hpp let b:fswitchdst = "cpp" | let b:fswitchlocs = "reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|"
+    au BufEnter *.cpp let b:fswitchdst = "hpp,h"
+augroup END
 
 " NerdTree mappings
-nmap <silent> <F7> :NERDTreeToggle<CR>
+nmap <silent> <Leader>t :NERDTreeToggle<CR>
 let NERDTreeDirArrows=1
 let NERDTreeQuitOnOpen=1
 
