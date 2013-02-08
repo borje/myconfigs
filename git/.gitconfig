@@ -13,10 +13,14 @@
 	lg = log --date=local --pretty=\"%ai %h %an - %s\"
 	l = log --date=local
 	rlog = log --date=relative
+        gl = log --graph 
 	in = log --stat --date=local HEAD..origin/master
 	out = log  --stat --date=local origin/master..HEAD
 	wdiff = diff --word-diff
 	fp = format-patch -k --stdout
+	dc = diff --cached
+        caa = commit -a --amend
+    ff = merge --ff-only
 [color]
 	branch = auto
 	diff = auto

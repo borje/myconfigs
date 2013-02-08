@@ -19,6 +19,9 @@ set tabstop=8
 set ignorecase
 set smartcase
 
+" Remember undo history when switching buffers
+set hid
+
 colorscheme peachpuff
 " tab complete like in bash
 set wildmenu
@@ -70,3 +73,12 @@ augroup END
 
 " NerdTree mappings
 nmap <silent> <F7> :NERDTreeToggle<CR>
+let NERDTreeDirArrows=1
+let NERDTreeQuitOnOpen=1
+
+" buftab settings
+let g:buftabs_separator=":"
+
+" Set directory for swp files
+set directory=/tmp
+set backupdir=/tmp
