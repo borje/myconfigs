@@ -21,6 +21,7 @@
 	dc = diff --cached
         caa = commit -a --amend
     ff = merge --ff-only
+    unstage = reset HEAD --mixed
 [color]
 	branch = auto
 	diff = auto

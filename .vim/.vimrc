@@ -28,7 +28,6 @@ set wildmenu
 set wildmode=longest,list,full
 set incsearch
 set nowrap
-set showcmd
 
 syntax on
 filetype plugin on
@@ -48,6 +47,7 @@ map <M-Left> :bp<CR>
 map <M-Right> :bn<CR>
 map <Leader>l :ls<CR>
 map <Leader><Leader> :b#<CR>
+map <Leader>fs :FSHere<CR>
 
 
 " Statusline
@@ -66,6 +66,11 @@ let g:SuperTabDefaultCompletionType = "context"
 " FSwitch mappings
 nmap <silent> <Leader>fs :FSHere<CR>
 map <C-Tab> :FSHere<CR>
+augroup fswithsettings
+    au!
+    au BufEnter *.hpp let b:fswitchdst = "cpp" | let b:fswitchlocs = "reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|"
+    au BufEnter *.cpp let b:fswitchdst = "hpp,h"
+augroup END
 
 " NerdTree mappings
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
