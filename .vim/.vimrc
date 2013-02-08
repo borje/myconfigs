@@ -44,6 +44,7 @@ map <M-Left> :bp<CR>
 map <M-Right> :bn<CR>
 map ,l :ls<CR>
 map ,, :b#<CR>
+map ,fs :FSHere<CR>
 
 
 " Statusline
@@ -61,6 +62,11 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " FSwitch mappings
 nmap <silent> ,fs :FSHere<CR>
+augroup fswithsettings
+    au!
+    au BufEnter *.hpp let b:fswitchdst = "cpp" | let b:fswitchlocs = "reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|"
+    au BufEnter *.cpp let b:fswitchdst = "hpp,h"
+augroup END
 
 " NerdTree mappings
 nmap <silent> <F7> :NERDTreeToggle<CR>
