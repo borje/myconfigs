@@ -74,6 +74,7 @@ augroup END
 
 " NerdTree mappings
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
+nmap <silent> <Leader>tf :NERDTreeFind<CR>
 let NERDTreeDirArrows=1
 let NERDTreeQuitOnOpen=1
 
