@@ -84,3 +84,7 @@ let g:buftabs_separator=":"
 " Set directory for swp files
 set directory=/tmp
 set backupdir=/tmp
+
+
+" autoload file contents from hardrive automatic
+set autoread
