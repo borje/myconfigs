@@ -19,6 +19,9 @@ set tabstop=8
 set ignorecase
 set smartcase
 
+" make backspace work in /// environment
+set backspace=indent,start,eol
+
 " Remember undo history when switching buffers
 set hid
 
