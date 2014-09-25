@@ -75,6 +75,9 @@ augroup fswithsettings
     au BufEnter *.cpp let b:fswitchdst = "hpp,h"
 augroup END
 
+"" textwith when committing in git
+au FileType gitcommit set tw=72
+
 " NerdTree mappings
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
 let NERDTreeDirArrows=1
