@@ -94,3 +94,9 @@ au BufWritePost *.go Fmt
 " Set directory for swp files
 set directory=/tmp
 set backupdir=/tmp
+
+
+let g:NERDCustomDelimiters = {
+    \ 'go': {  'left': '//', 'leftAlt': '/*','rightAlt': '*/' },
+    \}
+let NERD_go_alt_style=1
