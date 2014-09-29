@@ -40,7 +40,10 @@
     changed = green
     untracked = cyan
 [merge]
-    tool = emerge
+    tool = splice
     conflictstyle = diff3
+[mergetool "splice"]
+    cmd = "gvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+    trustExitCode = true
 [push]
     default = tracking
