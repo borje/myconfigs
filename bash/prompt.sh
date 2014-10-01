@@ -10,6 +10,8 @@ LIGHT_GRAY="\[\033[0;37m\]"
 BYellow="\[\033[1;33m\]"      # Yellow
 COLOR_NONE="\[\e[0m\]"
 
+export GIT_PS1_SHOWDIRTYSTATE=true
+
 function prompt_func() {
     previous_return_value=$?;
     HOST=""
