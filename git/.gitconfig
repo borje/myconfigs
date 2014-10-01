@@ -3,6 +3,7 @@
     name = Borje Granberg
 [core]
     editor = vim
+    pager = less -FRSX
 [alias]
     co = checkout
     br = branch
