@@ -32,4 +32,6 @@ function prompt_func() {
     fi
 }
 
+export GIT_PS1_SHOWDIRTYSTATE=1
+
 PROMPT_COMMAND=prompt_func
