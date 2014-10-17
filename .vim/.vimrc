@@ -74,7 +74,7 @@ augroup fswithsettings
     au BufEnter *.hpp let b:fswitchdst = "cpp" | let b:fswitchlocs = "reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|"
     au BufEnter *.cpp let b:fswitchdst = "hpp,h"
     au BufEnter *.hh let b:fswitchdst = "cc" | let b:fswitchlocs = "reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|"
-    au BufEnter *.cc let b:fswitchdst = "hh,h" | let b:fswitchlocs = "reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|"
+    au BufEnter *.cc let b:fswitchdst = "hh,h" | let b:fswitchlocs = "reg:/src/include/,reg:/src.*/include/,ifrel:|/src/|../include|"
 augroup END
 
 "" textwith when committing in git
