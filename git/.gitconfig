@@ -15,14 +15,15 @@
     l = log --date=local
     rlog = log --date=relative
     gl = log --graph --decorate
-    in = log --stat --date=local HEAD..origin/master
-    out = log  --stat --date=local origin/master..HEAD
+    in = log --stat --date=local HEAD..@{u}
+    out = log  --stat --date=local @{u}..HEAD
     wdiff = diff --word-diff
     fp = format-patch -k --stdout
     dc = diff --cached
     caa = commit -a --amend
     ff = merge --ff-only
     unstage = reset HEAD --mixed
+    rbo = rebase -i @{u}
 [color]
     branch = auto
     diff = auto
