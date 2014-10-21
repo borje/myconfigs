@@ -95,7 +95,7 @@ au BufWritePost *.go Fmt
 set directory=/tmp
 set backupdir=/tmp
 
-
+" Single line comments in go code as default
 let g:NERDCustomDelimiters = {
     \ 'go': {  'left': '//', 'leftAlt': '/*','rightAlt': '*/' },
     \}
