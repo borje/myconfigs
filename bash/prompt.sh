@@ -1,14 +1,14 @@
 # The prompt
-RED="\[\033[0;31m\]"
-YELLOW="\[\033[0;33m\]"
-GREEN="\[\033[0;32m\]"
-BLUE="\[\033[0;34m\]"
-LIGHT_RED="\[\033[1;31m\]"
-LIGHT_GREEN="\[\033[1;32m\]"
-WHITE="\[\033[1;37m\]"
-LIGHT_GRAY="\[\033[0;37m\]"
-BYellow="\[\033[1;33m\]"      # Yellow
-COLOR_NONE="\[\e[0m\]"
+RED='\[\033[0;31m\]'
+YELLOW='\[\033[0;33m\]'
+GREEN='\[\033[0;32m\]'
+BLUE='\[\033[0;34m\]'
+LIGHT_RED='\[\033[1;31m\]'
+LIGHT_GREEN='\[\033[1;32m\]'
+WHITE='\[\033[1;37m\]'
+LIGHT_GRAY='\[\033[0;37m\]'
+BYellow='\[\033[1;33m\]'      # Yellow
+COLOR_NONE='\[\e[0m\]'
 
 export GIT_PS1_SHOWDIRTYSTATE=true
 
@@ -20,7 +20,7 @@ function prompt_func() {
     if [ $? -ne 0 ]; then
 	HOST="\h:"
     fi
-    prompt="\[\e[00;37m\][\A] \[\e[0m\]\[\e[00;31m\]\u\[\e[0m\]\[\e[00;37m\]@\h [\[\e[0m\]\[\e[00;32m\]\w\[\e[0m\]\[\e[00;37m\]]${BYellow}$(__git_ps1 " (%s) ")${COLOR_NONE}"
+    prompt="[\A] $RED\u$COLOR_NONE@\h [${GREEN}\w${COLOR_NONE}]$BYellow$(__git_ps1)$COLOR_NONE "
 
 
     # Color the prompt if the last command return exit status != 0
