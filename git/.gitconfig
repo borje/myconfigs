@@ -24,6 +24,7 @@
     ff = merge --ff-only
     unstage = reset HEAD --mixed
     rbo = rebase -i @{u}
+    tagdate = "!git tag $(git rev-parse --abbrev-ref HEAD)_$(date +'%y%m%d_%H%M%S')"
 [color]
     branch = auto
     diff = auto
