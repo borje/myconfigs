@@ -88,9 +88,6 @@ let NERDTreeQuitOnOpen=1
 " buftab settings
 let g:buftabs_separator=":"
 
-" Automatic gofmt on file save
-au BufWritePost *.go Fmt
-
 " Set directory for swp files
 set directory=/tmp
 set backupdir=/tmp
