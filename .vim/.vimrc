@@ -97,6 +97,7 @@ let g:NERDCustomDelimiters = {
     \ 'go': {  'left': '//', 'leftAlt': '/*','rightAlt': '*/' },
     \}
 let NERD_go_alt_style=1
+let g:go_fmt_command = "goimports"
 
 " Automatic reload of files if content is modified on disk
 set autoread
