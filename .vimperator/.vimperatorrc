@@ -11,5 +11,5 @@
 "" :autocmd LocationChange www\.google\.com/calendar fmap! -vkey -event keydown j k T,t a D,d d w m x c e z / + q s ?
 
 "" "Twitter
-"" :autocmd LocationChange www\.twitter\.com fmap! -vkey -event keydown .
+:autocmd LocationChange www\.twitter\.com fmap! -vkey -event keydown .
 
