@@ -22,7 +22,10 @@ set smartcase
 " Remember undo history when switching buffers
 set hid
 
-colorscheme peachpuff
+"colorscheme peachpuff
+set t_Co=256
+colorscheme xoria256
+
 " tab complete like in bash
 set wildmenu
 set wildmode=longest,list,full
