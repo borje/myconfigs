@@ -83,3 +83,10 @@ let g:buftabs_separator=":"
 " Set directory for swp files
 set directory=/tmp
 set backupdir=/tmp
+
+" Do OSX special stuff
+let s:uname = system("echo -n \"$(uname)\"")
+if !v:shell_error && s:uname != "Linux"
+    colorscheme xoria256
+endif
+
