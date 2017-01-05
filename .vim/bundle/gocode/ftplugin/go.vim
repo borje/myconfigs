@@ -1,1 +1,0 @@
-/opt/gocode/vim/ftplugin/go.vim
