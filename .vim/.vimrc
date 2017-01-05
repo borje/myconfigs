@@ -22,7 +22,10 @@ set smartcase
 " Remember undo history when switching buffers
 set hid
 
-colorscheme peachpuff
+"colorscheme peachpuff
+set t_Co=256
+colorscheme xoria256
+
 " tab complete like in bash
 set wildmenu
 set wildmode=longest,list,full
@@ -74,6 +77,7 @@ augroup END
 
 " NerdTree mappings
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
+nmap <silent> <Leader>tf :NERDTreeFind<CR>
 let NERDTreeDirArrows=1
 let NERDTreeQuitOnOpen=1
 
@@ -83,6 +87,10 @@ let g:buftabs_separator=":"
 " Set directory for swp files
 set directory=/tmp
 set backupdir=/tmp
+
+
+" autoload file contents from hardrive automatic
+set autoread
 
 " Do OSX special stuff
 let s:uname = system("echo -n \"$(uname)\"")
