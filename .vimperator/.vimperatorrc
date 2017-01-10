@@ -2,10 +2,14 @@
 :au!
 :autocmd LocationChange .* js modes.passAllKeys = false
 :autocmd LocationChange mail.google.com js modes.passAllKeys = true
+:autocmd LocationChange docs.google.com js modes.passAllKeys = true
 
 "" "Google Search
 "" : autocmd LocationChange www\.google\.(se|com)/search :fmap j k o /
 
 "" "Google Calendar
 "" :autocmd LocationChange www\.google\.com/calendar fmap! -vkey -event keydown j k T,t a D,d d w m x c e z / + q s ?
+
+"" "Twitter
+:autocmd LocationChange www\.twitter\.com fmap! -vkey -event keydown .
 

@@ -19,6 +19,9 @@ set tabstop=8
 set ignorecase
 set smartcase
 
+" make backspace work in /// environment
+set backspace=indent,start,eol
+
 " Remember undo history when switching buffers
 set hid
 
@@ -51,6 +54,7 @@ map <M-Right> :bn<CR>
 map <Leader>l :ls<CR>
 map <Leader><Leader> :b#<CR>
 map <Leader>fs :FSHere<CR>
+map <Leader>tb :TagbarToggle<CR>
 
 
 " Statusline
@@ -63,9 +67,6 @@ set showcmd
 " cd to the directory containing the file in the buffer
 nmap <silent> <Leader>cd :lcd %:h<CR>
 
-" set default SuperTab completion mode
-let g:SuperTabDefaultCompletionType = "context"
-
 " FSwitch mappings
 nmap <silent> <Leader>fs :FSHere<CR>
 map <C-Tab> :FSHere<CR>
@@ -73,7 +74,12 @@ augroup fswithsettings
     au!
     au BufEnter *.hpp let b:fswitchdst = "cpp" | let b:fswitchlocs = "reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|"
     au BufEnter *.cpp let b:fswitchdst = "hpp,h"
+    au BufEnter *.hh let b:fswitchdst = "cc" | let b:fswitchlocs = "reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|"
+    au BufEnter *.cc let b:fswitchdst = "hh,h" | let b:fswitchlocs = "reg:/src/include/,reg:/src.*/include/,ifrel:|/src/|../include|"
 augroup END
+
+"" textwith when committing in git
+au FileType gitcommit set tw=72
 
 " NerdTree mappings
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
@@ -89,12 +95,81 @@ set directory=/tmp
 set backupdir=/tmp
 
 
-" autoload file contents from hardrive automatic
-set autoread
-
 " Do OSX special stuff
 let s:uname = system("echo -n \"$(uname)\"")
 if !v:shell_error && s:uname != "Linux"
     colorscheme xoria256
 endif
 
+" Single line comments in go code as default
+let g:NERDCustomDelimiters = {
+    \ 'go': {  'left': '//', 'leftAlt': '/*','rightAlt': '*/' },
+    \}
+let NERD_go_alt_style=1
+let g:go_fmt_command = "goimports"
+
+" Automatic reload of files if content is modified on disk
+set autoread
+
+" Syntastic settings
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" gotags
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
+
+" NeoComplete settings
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Recommended neocomplete key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+" For no inserting <CR> key.
+" return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
