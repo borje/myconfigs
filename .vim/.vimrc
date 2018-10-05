@@ -19,6 +19,9 @@ set tabstop=8
 set ignorecase
 set smartcase
 
+" Remove comments when joining lines
+set formatoptions+=j
+
 " make backspace work in /// environment
 set backspace=indent,start,eol
 
