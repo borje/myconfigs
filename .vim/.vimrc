@@ -192,3 +192,5 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 "let g:neocomplete#enable_auto_select = 1
 
 so $HOME/.fzf/plugin/fzf.vim
+map <Leader>fz :Files<CR>
+map <Leader>bb :Buffers<CR>
