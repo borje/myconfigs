@@ -2,6 +2,20 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" vim-plug installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl --insecure -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+"Plug 'junegunn/seoul256.vim'
+"Plug 'junegunn/goyo.vim'
+"Plug 'junegunn/limelight.vim'
+Plug 'tpope/vim-fugitive'
+call plug#end()
+
 set tabpagemax=15
 set foldmethod=indent
 set foldlevelstart=99
