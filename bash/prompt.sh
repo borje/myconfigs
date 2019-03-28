@@ -20,7 +20,7 @@ function prompt_func() {
     if [ $? -ne 0 ]; then
 	HOST="\h:"
     fi
-    prompt="[\A] $RED\u$COLOR_NONE@\h [${GREEN}\w${COLOR_NONE}]$BYellow$(__git_ps1)$COLOR_NONE "
+    prompt="[\A] $RED\u$COLOR_NONE@\h [${GREEN}\w${COLOR_NONE}]$BYellow$(__git_ps1)$COLOR_NONE\n"
 
 
     # Color the prompt if the last command return exit status != 0
