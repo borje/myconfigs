@@ -1,3 +1,6 @@
 [submodule ".vim/bundle/splice"]
 	path = .vim/bundle/splice
 	url = https://github.com/sjl/splice.vim
+[submodule "bash/z.lua"]
+	path = bash/z.lua
+	url = https://github.com/skywind3000/z.lua.git
