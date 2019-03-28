@@ -14,6 +14,9 @@ call plug#begin('~/.vim/plugged')
 "Plug 'junegunn/goyo.vim'
 "Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'alvan/vim-closetag' " Auto close (X)HTML tags 
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'espizo/vim-gitcommit-issue-id'
 call plug#end()
 
 set tabpagemax=15
@@ -90,7 +93,8 @@ map <C-Tab> :FSHere<CR>
 augroup fswithsettings
     au!
     au BufEnter *.hpp let b:fswitchdst = "cpp" | let b:fswitchlocs = "reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|"
-    au BufEnter *.cpp let b:fswitchdst = "hpp,h"
+    au BufEnter *.h let b:fswitchdst = "cpp,c" | let b:fswitchlocs = "reg:/public/private/,reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|"
+    au BufEnter *.cpp let b:fswitchdst = "h,hpp"| let b:fswitchlocs = "reg:/private/public/"
     au BufEnter *.hh let b:fswitchdst = "cc" | let b:fswitchlocs = "reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|"
     au BufEnter *.cc let b:fswitchdst = "hh,h" | let b:fswitchlocs = "reg:/src/include/,reg:/src.*/include/,ifrel:|/src/|../include|"
 augroup END
@@ -196,3 +200,8 @@ map <Leader>fz :Files<CR>
 map <Leader>bb :Buffers<CR>
 nnoremap <C-f> :Files<Cr>
 nnoremap <C-g> :Rg<Cr>
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+
+" closetag settings
+let g:closetag_filenames = '*.xml,*.html'

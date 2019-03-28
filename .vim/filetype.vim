@@ -12,3 +12,5 @@ augroup END
 au! BufRead,BufNewFile .hgrc          setfiletype cfg
 
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
+autocmd Filetype sh setlocal tabstop=2 shiftwidth=2 softtabstop=0 expandtab
+set fileformats=unix,dos
