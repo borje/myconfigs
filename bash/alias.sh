@@ -4,3 +4,5 @@ pathadd() {
         PATH="${PATH:+"$PATH:"}$1"
     fi
 }
+
+alias reloadbash='source $HOME/.bashrc'
