@@ -13,10 +13,12 @@ call plug#begin('~/.vim/plugged')
 "Plug 'junegunn/seoul256.vim'
 "Plug 'junegunn/goyo.vim'
 "Plug 'junegunn/limelight.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-fugitive'
 Plug 'alvan/vim-closetag' " Auto close (X)HTML tags 
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'espizo/vim-gitcommit-issue-id'
+Plug 'paul-nechifor/vim-svn-blame'
 call plug#end()
 
 set tabpagemax=15
