@@ -30,6 +30,7 @@ function prompt_func() {
     else
         PS1="${prompt}${RED}${previous_return_value}\$${COLOR_NONE} "
     fi
+    export PS1
 }
 
 export GIT_PS1_SHOWDIRTYSTATE=1
