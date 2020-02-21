@@ -7,4 +7,5 @@ set guioptions-=r
 ""set guifont=Monaco 10,Monospace
 set guifont=Monospace\ 9
 set lines=999 columns=999 " start maximized
+"let g:NERDTreeDirArrows = 0
 set encoding=utf-8
