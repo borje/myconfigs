@@ -1,3 +1,2 @@
-_Z_CMD=j
-. $(dirname ${BASH_SOURCE[0]})/z/z.sh
-
+_ZL_CMD=j
+eval "$(lua $(dirname ${BASH_SOURCE[0]})/z.lua/z.lua --init bash)"
